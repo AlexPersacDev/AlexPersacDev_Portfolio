@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proyectos | Tu Nombre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tu Nombre</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="proyectos.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Proyectos</h2>
+      <div class="proyecto">
+        <h3>Who's Playing (2024)</h3>
+        <p>
+          Herramienta para Unity que permite implementar un sistema de inteligencia adaptativa, capaz de analizar el comportamiento de los jugadores y modificar dinámicamente el juego en función de sus patrones.
+        </p>
+      </div>
+
+      <div class="proyecto">
+        <h3>Procedural Dungeon Generator (2024)</h3>
+        <p>
+          Generador procedural modular de mazmorras con salas conectadas, control de escala y número de habitaciones. Desarrollado en una semana como primera aproximación a generación procedural.
+        </p>
+      </div>
+
+      <div class="proyecto">
+        <h3>Vivid Veil (2024 - 2025)</h3>
+        <p>
+          Primer juego de Illogic Games. Desarrollo de arquitectura base y sistemas principales. Coordinación de tareas y estructura técnica del equipo de programación.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tu Nombre</p>
+  </footer>
+
+</body>
+</html>

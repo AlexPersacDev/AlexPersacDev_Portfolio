@@ -1,0 +1,64 @@
+:root {
+  --background: #1e1e1e;
+  --text: #ffffff;
+  --accent: #ffcc00;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--accent);
+}
+
+header h1 {
+  font-size: 1.8em;
+  color: var(--accent);
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.intro {
+  margin-top: 40px;
+}
+
+.intro h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.intro p {
+  max-width: 600px;
+}
+
+footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--accent);
+  text-align: center;
+  font-size: 0.9em;
+}
