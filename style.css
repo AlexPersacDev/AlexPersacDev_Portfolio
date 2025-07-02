@@ -15,7 +15,7 @@ body {
   color: var(--text);
   font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
   font-weight: 300;
-  padding: 20px;
+  padding: 20px 0;
   margin: auto;
   width: 90%;
   max-width: 1200px;
