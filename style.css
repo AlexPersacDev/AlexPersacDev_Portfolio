@@ -32,7 +32,6 @@ header {
   top: 0;
   background-color: var(--background);
   z-index: 1000;
-  padding: 20px 0;
 }
 
 header h1 {
