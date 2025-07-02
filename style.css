@@ -1,3 +1,8 @@
+Claro, aquí tienes el style.css actualizado listo para copiar y pegar:
+
+css
+Copiar
+Editar
 :root {
   --background: #1e1e1e;
   --text: #ffffff;
@@ -13,7 +18,8 @@
 body {
   background-color: var(--background);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  font-weight: 300;
   padding: clamp(1rem, 5vw, 2rem);
   max-width: 900px;
   margin: auto;
@@ -50,6 +56,8 @@ nav a:hover {
   font-size: 1.5em;
   margin-bottom: 10px;
   color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
 }
 
 .intro p {
@@ -63,6 +71,13 @@ footer {
   text-align: center;
   font-size: 0.9em;
 }
+
+section {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
