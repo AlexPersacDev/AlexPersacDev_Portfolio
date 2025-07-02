@@ -15,7 +15,7 @@ body {
   color: var(--text);
   font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
   font-weight: 300;
-  padding: 20px clamp(5px, 5vw, 40px); /* 20px arriba y abajo, 15-40px a los lados */
+  padding: 5px clamp(5px, 5vw, 40px); /* 20px arriba y abajo, 15-40px a los lados */
   max-width: 900px;
   margin: auto;
 }
