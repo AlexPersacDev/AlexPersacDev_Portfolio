@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio | Alex Pereira Sacritsán</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <h1>Alex Pereira Sacritsán</h1>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="proyectos.html">Proyectos</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <main>
-    <section class="intro">
+
+    <!-- SECCIÓN SOBRE MÍ -->
+    <section id="sobre-mi" class="intro">
+      <img src="banner-placeholder.jpg" alt="Banner personal" style="width: 100%; border-radius: 12px; margin-bottom: 20px;" />
       <h2>Desarrollador de videojuegos y programador técnico</h2>
       <p>
         Soy un desarrollador centrado en la arquitectura de software para videojuegos, con experiencia en inteligencia artificial, generación procedural y gestión de equipos técnicos. Busco generar experiencias sólidas, escalables y eficientes.
       </p>
     </section>
+
+    <!-- SECCIÓN PROYECTOS -->
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+
+      <div class="proyecto">
+        <img src="whosplaying-banner.jpg" alt="Banner Who's Playing" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
+        <h3>Who's Playing (2024)</h3>
+        <p>
+          Herramienta para Unity que permite implementar un sistema de inteligencia adaptativa, capaz de analizar el comportamiento de los jugadores y modificar dinámicamente el juego en función de sus patrones.
+        </p>
+        <img src="placeholder.jpg" alt="Captura o imagen del proyecto" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+      </div>
+
+      <div class="proyecto">
+        <img src="dungeon-banner.jpg" alt="Banner Dungeon Generator" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
+        <h3>Procedural Dungeon Generator (2024)</h3>
+        <p>
+          Generador procedural modular de mazmorras con salas conectadas, control de escala y número de habitaciones. Desarrollado en una semana como primera aproximación a generación procedural.
+        </p>
+        <img src="placeholder.jpg" alt="Captura o imagen del proyecto" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+      </div>
+
+      <div class="proyecto">
+        <img src="vividveil-banner.jpg" alt="Banner Vivid Veil" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
+        <h3>Vivid Veil (2024 - 2025)</h3>
+        <p>
+          Primer juego de Illogic Games. Desarrollo de arquitectura base y sistemas principales. Coordinación de tareas y estructura técnica del equipo de programación.
+        </p>
+        <img src="placeholder.jpg" alt="Captura o imagen del proyecto" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="intro">
+      <h2>Contacto</h2>
+      <ul>
+        <li>Email: <a href="mailto:alexpersac01@gmail.com">alexpersac01@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/alexpereirasacristan/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/AlexPersacDev" target="_blank">GitHub</a></li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>
