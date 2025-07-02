@@ -14,9 +14,7 @@ body {
   background-color: #1e1e1e;
   color: white;
   font-family: 'Inter', sans-serif;
-  padding: 20px;
-  right-padding: 15px;
-  left-padding: 15px;
+  padding: 20px 15px;
   max-width: 900px;
   margin: auto;
 }
