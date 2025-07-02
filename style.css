@@ -111,3 +111,30 @@ section {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text);
+  z-index: 1000;
+  padding: 20px clamp(5px, 5vw, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+}
+
+.sticky-header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  box-shadow: none;
+}
+
+.sticky-header.show-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
