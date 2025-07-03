@@ -24,22 +24,45 @@ h1 {
   margin: 0;
   font-size: 2rem;
   white-space: nowrap; /* evita salto línea */
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
 }
 
-h2 {
+/* Títulos principales secundarios con clase */
+h2.section-title {
+  font-family: 'Tektur', cursive, sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+/* Títulos intermedios (sin subrayar, pero amarillos) */
+h2:not(.section-title) {
   font-family: 'Orbitron', sans-serif; /* intermedia */
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 1.8rem;
+  color: var(--accent);
+  text-decoration: none;
 }
 
+/* Subtítulos */
 h3.subheading {
   font-family: 'Orbitron', sans-serif; /* intermedia para subtítulos */
   font-weight: 500;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  color: var(--accent);
+  text-decoration: none;
 }
 
 /* Sticky header */
