@@ -31,7 +31,6 @@ header {
   align-items: center;
   padding: 20px 40px;
   border-bottom: 1px solid var(--accent);
-
   position: sticky;
   top: 0;
   background-color: var(--background);
@@ -87,19 +86,19 @@ h3.subheading {
 .section-anchor {
   position: relative;
   scroll-margin-top: 100px;
-  padding-bottom: 50px; /* para línea decorativa */
+  padding-bottom: 60px; /* espacio extra para línea decorativa */
 }
 
 .section-anchor::after {
   content: "";
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 90px;
-  height: 5px;
+  width: 120px;
+  height: 7px;
   background-color: var(--accent);
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 /* TEXTOS */
@@ -162,10 +161,40 @@ footer {
   font-weight: 300;
 }
 
-/* GLOBAL LINKS (para contacto, footer, etc.) */
+/* GLOBAL LINKS */
 a,
 a:visited {
   color: var(--accent);
   text-decoration: none;
   transition: all 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+
+  .proyecto {
+    flex-direction: column;
+  }
+
+  .video-container {
+    max-width: 100%;
+    margin-left: 0;
+  }
 }
