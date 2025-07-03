@@ -6,9 +6,9 @@
 
 /* TIPOGRAFÍAS: Cambia estos valores y añade los links a Google Fonts en el <head> */
 :root {
-  --font-common: 'Inter', sans-serif;      /* Texto común */
-  --font-titular: 'Oswald', sans-serif;    /* Títulos secciones (h2) */
-  --font-intermedia: 'Poppins', sans-serif; /* Subtítulos (h3) */
+  --font-comun: 'Saira', sans-serif;
+  --font-intermedia: 'Orbitron', sans-serif;
+  --font-titular: 'Tektur', cursive;
 }
 
 /* RESET Y BASE */
