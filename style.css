@@ -17,13 +17,14 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
+  text-align: left; /* aseguramos que no esté justificado */
 }
 
 .wrapper {
   width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px 0;
+  max-width: 900px; /* más contenido centrado y no tan ancho */
+  margin: 20px auto; /* centrado horizontal con espacio arriba/abajo */
+  padding: 0 15px;
 }
 
 header {
@@ -32,7 +33,6 @@ header {
   align-items: center;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--accent);
-  
   position: sticky;
   top: 0;
   background-color: var(--background);
@@ -105,12 +105,14 @@ section .proyecto {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 600px; /* Máximo ancho razonable */
   padding-bottom: 56.25%; /* 16:9 ratio */
   height: 0;
   overflow: hidden;
   border-radius: 12px;
   margin-top: 15px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .video-container iframe {
