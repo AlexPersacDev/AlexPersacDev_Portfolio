@@ -17,6 +17,10 @@
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
+    <!-- Botón para alternar tema claro/oscuro -->
+    <button id="toggle-theme" aria-label="Cambiar tema" style="background:none; border:none; color: var(--accent); font-size: 1.4rem; cursor: pointer; margin-left: 1rem;">
+      🌓
+    </button>
   </header>
 
   <div class="wrapper">
@@ -132,6 +136,26 @@
     window.addEventListener('mousemove', (e) => {
       if (e.clientY < 50) {
         header.classList.remove('hidden');
+      }
+    });
+
+    // Toggle tema claro/oscuro
+    const toggleBtn = document.getElementById('toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      // Guardar preferencia en localStorage
+      if (document.body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light');
+      } else {
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Cargar preferencia al cargar la página
+    window.addEventListener('load', () => {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
       }
     });
   </script>
