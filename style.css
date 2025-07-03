@@ -17,13 +17,13 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
-  text-align: left; /* aseguramos que no esté justificado */
+  text-align: left;
 }
 
 .wrapper {
   width: 90%;
-  max-width: 900px; /* más contenido centrado y no tan ancho */
-  margin: 20px auto; /* centrado horizontal con espacio arriba/abajo */
+  max-width: 900px;
+  margin: 20px auto;
   padding: 0 15px;
 }
 
@@ -56,22 +56,32 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* TÍTULOS */
-
-h2 {
-  font-size: 2.2em;
-  color: var(--accent);
-  margin-bottom: 20px;
-  font-weight: 300;
+/* Para que el scroll no tape los títulos al navegar */
+h2, h3.subheading {
+  scroll-margin-top: 80px;
 }
 
-h3.subheading {
-  font-size: 1.6em;
+/* Títulos principales (secciones) */
+h2 {
+  font-size: 2.4em;
   color: var(--accent);
-  margin-left: 15px;
-  margin-top: 15px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+/* Subtítulos (sub-secciones, proyectos, etc) */
+h3.subheading {
+  font-size: 1.8em;
+  color: var(--accent);
+  margin-left: 0;
+  margin-top: 25px;
   margin-bottom: 15px;
   font-weight: 300;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+  width: 100%;
 }
 
 /* TEXTOS Y SEPARACIONES */
@@ -90,65 +100,4 @@ section .proyecto {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 15px;
-}
-
-/* Espaciado específico para textos y subtítulos dentro de proyectos */
-.proyecto p {
-  margin-top: 12px;
-  margin-bottom: 12px;
-  line-height: 1.6;
-}
-
-/* VIDEO CONTAINER */
-
-.video-container {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Máximo ancho razonable */
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  margin-top: 15px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  nav a {
-    margin-left: 0;
-    margin-right: 15px;
-  }
-
-  .intro p {
-    max-width: 100%;
-  }
-
-  .proyecto {
-    gap: 10px;
-  }
-
-  .video-container {
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 10px;
-  }
-}
+ 
