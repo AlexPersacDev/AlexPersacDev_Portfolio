@@ -106,5 +106,33 @@
       <p>&copy; 2025 AlexPersac Dev</p>
     </footer>
   </div>
+  <script>
+  let lastScroll = 0;
+  const header = document.querySelector('.sticky-header');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) {
+      header.classList.remove('hidden');
+      return;
+    }
+
+    if (currentScroll > lastScroll) {
+      // Scroll hacia abajo, oculta header
+      header.classList.add('hidden');
+    } else {
+      // Scroll hacia arriba, muestra header
+      header.classList.remove('hidden');
+    }
+    lastScroll = currentScroll;
+  });
+
+  // Mostrar el header si el ratón está cerca de la parte superior (50px)
+  window.addEventListener('mousemove', (e) => {
+    if (e.clientY < 50) {
+      header.classList.remove('hidden');
+    }
+  });
+</script>
 </body>
 </html>
