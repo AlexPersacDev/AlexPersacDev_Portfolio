@@ -1,121 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio | Alex Pereira Sacritsán</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio | Alex Pereira Sacristán</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --accent-color: #ffcc00;
+        --background: #1e1e1e;
+        --text-color: #ffffff;
+        --card-bg: #2a2a2a;
+      }
 
-<header class="sticky-header">
-  <h1>Alex Pereira Sacritsán</h1>
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
+      body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        background-color: var(--background);
+        color: var(--text-color);
+        scroll-behavior: smooth;
+        line-height: 1.6;
+      }
 
-  <main>
+      header.sticky-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--background);
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        transition: top 0.3s;
+      }
 
-    <!-- SECCIÓN SOBRE MÍ -->
-    <section id="sobre-mi" class="intro">
-      <img src="banner-placeholder.jpg" alt="Banner personal" style="width: 100%; border-radius: 12px; margin-bottom: 20px;" />
-      <h2>Desarrollador de videojuegos y programador técnico</h2>
-      <p>
-        Soy un desarrollador centrado en la arquitectura de software para videojuegos, con experiencia en inteligencia artificial, generación procedural y gestión de equipos técnicos. Busco generar experiencias sólidas, escalables y eficientes.
-      </p>
-    </section>
+      header h1 {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
 
-    <!-- SECCIÓN PROYECTOS -->
-    <section id="proyectos">
-      <h2>Proyectos</h2>
+      nav a {
+        color: var(--text-color);
+        margin-left: 1rem;
+        text-decoration: none;
+      }
 
-      <div class="proyecto">
-        <img src="whosplaying-banner.jpg" alt="Banner Who's Playing" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
-        <h3>Who's Playing (2024)</h3>
+      section {
+        max-width: 800px;
+        margin: 120px auto 60px;
+        padding: 0 1rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--accent-color);
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-top: 2rem;
+        color: var(--accent-color);
+      }
+
+      .subheading {
+        color: var(--accent-color);
+        font-weight: 600;
+        margin-top: 1.5rem;
+        margin-left: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .proyecto img {
+        width: 100%;
+        border-radius: 12px;
+        margin: 1rem 0;
+      }
+
+      iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
+        border-radius: 12px;
+      }
+
+      .badge {
+        display: inline-block;
+        background: #333;
+        border-radius: 9999px;
+        padding: 4px 10px;
+        margin: 0 4px 4px 0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        font-size: 0.9rem;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sticky-header">
+      <h1>Alex Pereira Sacristán</h1>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- INICIO -->
+      <section id="inicio">
+        <img src="banner-placeholder.jpg" alt="Banner personal" />
+        <h2>Desarrollador técnico de videojuegos</h2>
+        <p>IA, generación procedural, arquitectura limpia. Explora mi trabajo y filosofía.</p>
+      </section>
+
+      <!-- SOBRE MÍ -->
+      <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <h3 class="subheading">¿De dónde salgo?</h3>
         <p>
-          Herramienta para Unity que permite implementar un sistema de inteligencia adaptativa, capaz de analizar el comportamiento de los jugadores y modificar dinámicamente el juego en función de sus patrones.
+          Ilicitano con sangre extremeña y gallega, de familia de artistas y diseñadores, descubrí en el grado superior de desarrollo de entornos interactivos que mi vocación era la programación.
         </p>
-        <img src="placeholder.jpg" alt="Captura o imagen del proyecto" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
-      </div>
-
-      <div class="proyecto">
-        <img src="dungeon-banner.jpg" alt="Banner Dungeon Generator" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
-        <h3>Procedural Dungeon Generator (2024)</h3>
         <p>
-          Generador procedural modular de mazmorras con salas conectadas, control de escala y número de habitaciones. Desarrollado en una semana como primera aproximación a generación procedural.
+          La programación de entornos interactivos me permite combinar las que considero mis dos mayores cualidades: mi razonamiento lógico y el ojo artístico que he desarrollado desde pequeño.
         </p>
-        <img src="placeholder.jpg" alt="Captura o imagen del proyecto" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
-      </div>
+      </section>
 
-      <div class="proyecto">
-        <img src="vividveil-banner.jpg" alt="Banner Vivid Veil" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
-        <h3>Vivid Veil (2024 - 2025)</h3>
-        <p>
-          Primer juego de Illogic Games. Desarrollo de arquitectura base y sistemas principales. Coordinación de tareas y estructura técnica del equipo de programación.
-        </p>
-        <img src="placeholder.jpg" alt="Captura o imagen del proyecto" style="width: 100%; border-radius: 8px; margin-top: 10px;" />
-      </div>
-    </section>
+      <!-- PROYECTOS -->
+      <section id="proyectos">
+        <h2>Proyectos</h2>
 
-    <!-- SECCIÓN CONTACTO -->
-    <section id="contacto" class="intro">
-      <h2>Contacto</h2>
-      <ul>
-        <li>Email: <a href="mailto:alexpersac01@gmail.com">alexpersac01@gmail.com</a></li>
-        <li><a href="https://www.linkedin.com/in/alexpereirasacristan/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/AlexPersacDev" target="_blank">GitHub</a></li>
-      </ul>
-    </section>
+        <div class="proyecto">
+          <img src="whosplaying-banner.jpg" alt="Banner Who's Playing" />
+          <h3 class="subheading">Who's Playing (2024)</h3>
+          <p><strong>Descripción:</strong> "Who's playin?" es una IA adaptativa como herramienta para desarrolladores de videojuegos en Unity...</p>
+          <p><strong>Tecnologías:</strong> <span class="badge">Unity</span> <span class="badge">C#</span> <span class="badge">Git</span></p>
+          <p><strong>Mi aportación:</strong> Este proyecto tuvo una primera fase de análisis y estudio del usuario...</p>
+          <iframe src="https://www.youtube.com/embed/ID_VIDEO1"></iframe>
+        </div>
 
-  </main>
+        <div class="proyecto">
+          <img src="dungeon-banner.jpg" alt="Banner Procedural Dungeon Generator" />
+          <h3 class="subheading">Procedural Dungeon Generator (2024)</h3>
+          <p><strong>Descripción:</strong> En este proyecto primero encontramos un sistema generación modular de habitaciones...</p>
+          <p><strong>Tecnologías:</strong> <span class="badge">Unity</span> <span class="badge">C#</span> <span class="badge">Git</span> <span class="badge">Notion</span> <span class="badge">Miró</span></p>
+          <p><strong>Mi aportación:</strong> Desde un inicio me dediqué a documentarme sobre este campo...</p>
+          <iframe src="https://www.youtube.com/embed/ID_VIDEO2"></iframe>
+        </div>
 
-  <footer>
-    <p>&copy; 2025 AlexPersac Dev</p>
-  </footer>
+        <div class="proyecto">
+          <img src="vividveil-banner.jpg" alt="Banner Vivid Veil" />
+          <h3 class="subheading">Vivid Veil (2024–2025)</h3>
+          <p><strong>Descripción:</strong> Vivid Veil es el primer proyecto real y grande al que me enfrento...</p>
+          <p><strong>Tecnologías:</strong> <span class="badge">Unity</span> <span class="badge">C#</span> <span class="badge">Plastic SCM</span> <span class="badge">Notion</span> <span class="badge">Miró</span></p>
+          <p><strong>Rol y responsabilidades:</strong> En este proyecto me he encargado de desarrollar y plantear todo el concepto del juego...</p>
+          <iframe src="https://www.youtube.com/embed/ID_VIDEO3"></iframe>
+        </div>
+      </section>
 
-  <script>
-  const header = document.querySelector('.sticky-header');
-  let lastScroll = 0;
-  let isHovered = false;
+      <!-- CONTACTO -->
+      <section id="contacto">
+        <h2>Contacto</h2>
+        <ul>
+          <li>Email: <a href="mailto:alexpersac01@gmail.com">alexpersac01@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/alexpereirasacristan/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/AlexPersacDev" target="_blank">GitHub</a></li>
+        </ul>
+      </section>
+    </main>
 
-  // Hover-top para escritorio
-  document.addEventListener('mousemove', (e) => {
-    if (e.clientY < 40) {
-      header.classList.remove('hidden');
-      isHovered = true;
-    } else {
-      isHovered = false;
-    }
-  });
-
-  // Scroll up/down behavior
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.scrollY;
-
-    if (currentScroll === 0 || currentScroll < lastScroll || isHovered) {
-      header.classList.remove('hidden');
-    } else {
-      header.classList.add('hidden');
-    }
-
-    // Sombra al hacer scroll
-    if (currentScroll > 10) {
-      header.classList.add('show-shadow');
-    } else {
-      header.classList.remove('show-shadow');
-    }
-
-    lastScroll = currentScroll;
-  });
-</script>
-</body>
+    <footer>
+      <p>&copy; 2025 AlexPersac Dev</p>
+    </footer>
+  </body>
 </html>
+
