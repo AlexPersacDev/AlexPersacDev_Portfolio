@@ -6,7 +6,7 @@
 
 /* TIPOGRAFÍAS: Cambia estos valores y añade los links a Google Fonts en el <head> */
 :root {
-  --font-comun: 'Saira', sans-serif;
+  --font-comun: 'M PLUS Code Latin', monospace;
   --font-intermedia: 'Orbitron', sans-serif;
   --font-titular: 'Tektur', cursive;
 }
