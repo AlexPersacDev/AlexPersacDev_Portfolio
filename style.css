@@ -32,6 +32,8 @@ header {
   align-items: center;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--accent);
+    padding-left: 20px;
+  padding-right: 20px;
 
   position: sticky;
   top: 0;
@@ -133,6 +135,31 @@ section .proyecto {
   border-radius: 12px;
   font-weight: 600;
   margin-left: 6px;
+}
+
+.section-anchor {
+  position: relative;
+  scroll-margin-top: 80px;
+  padding-bottom: 20px; /* espacio para la barra */
+}
+
+.section-anchor::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* barra corta */
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: 2px;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 300;
 }
 
 /* RESPONSIVE */
