@@ -54,58 +54,70 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* NUEVOS ESTILOS PARA TÍTULOS */
+/* =====================
+   TÍTULOS
+===================== */
 
 h2 {
   font-size: 2.2em;
   color: var(--accent);
-  border-bottom: 3px solid var(--accent);
-  padding-bottom: 6px;
   margin-bottom: 20px;
+  font-weight: normal;
+  border: none; /* Quitar línea inferior */
 }
 
 h3.subheading {
   font-size: 1.6em;
   color: var(--accent);
-  margin-left: 15px; 
-  margin-bottom: 15px;
-
-  border-bottom: none;
-  padding-bottom: 0;
-  font-weight: 300;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  font-weight: normal; /* quitar negrita */
+  border: none; /* quitar línea */
 }
 
-/* SEPARACIÓN ENTRE BLOQUES DE TEXTO */
+/* =====================
+   PÁRRAFOS Y ESPACIADOS EN PROYECTOS
+===================== */
 
-section p,
-section ul,
-section .proyecto {
-  margin-top: 20px;
-  margin-bottom: 20px;
+section p {
+  margin-bottom: 1em;
+  line-height: 1.5;
 }
-
-/* PROYECTO: layout horizontal para evitar espacio gigante */
 
 .proyecto {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 3em;
+  margin-bottom: 3em;
   display: flex;
-  flex-direction: row;  /* Cambio a fila */
+  flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
-  flex-wrap: wrap; /* para móviles */
 }
 
-/* VIDEO CONTAINER con posición relativa, padding para aspecto 16:9 */
+.proyecto img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 1em;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.proyecto img:hover {
+  transform: scale(1.02);
+}
+
+/* =====================
+   CONTENEDOR DE VIDEO
+===================== */
+
 .video-container {
   position: relative;
-  max-width: 30%;        /* ancho para desktop */
-  padding-bottom: 56.25%; /* relación 16:9 */
-  height: 0;
-  overflow: hidden;
+  width: 100%;
+  max-width: 640px; /* tamaño máximo para video */
+  aspect-ratio: 16 / 9;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
   border-radius: 12px;
-  margin-top: 20px;
-  margin-left: 15px;
+  overflow: hidden;
 }
 
 .video-container iframe {
@@ -114,11 +126,12 @@ section .proyecto {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: none;
 }
 
-
-/* HEADER FIXED Y COMPORTAMIENTO */
+/* =====================
+   HEADER FIJO Y COMPORTAMIENTO
+===================== */
 
 .sticky-header {
   position: fixed;
@@ -148,12 +161,9 @@ section .proyecto {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* OTROS ESTILOS EXISTENTES */
-
-.proyecto img:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
-}
+/* =====================
+   MEDIA QUERY PARA MÓVILES
+===================== */
 
 @media (max-width: 600px) {
   header {
@@ -167,20 +177,12 @@ section .proyecto {
     margin-right: 15px;
   }
 
-  .intro p {
-    max-width: 100%;
-  }
-
   .proyecto {
-    flex-direction: column; /* columnas en móvil */
-    margin-top: 30px;
-    margin-bottom: 30px;
+    flex-direction: column;
   }
 
   .video-container {
-    max-width: 100%;    /* video ancho completo en móvil */
-    padding-bottom: 56.25%;
+    max-width: 100%;
     margin-left: 0;
-    margin-top: 20px;
   }
 }
