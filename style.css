@@ -89,6 +89,9 @@ section .proyecto {
 .proyecto {
   margin-top: 40px;
   margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 /* =====================
@@ -154,6 +157,17 @@ section .proyecto {
   transition: transform 0.3s ease;
 }
 
+.video-container {
+  position: relative;
+  max-width: 30%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -169,11 +183,9 @@ section .proyecto {
   .intro p {
     max-width: 100%;
   }
-
-  /* Para que el video también se ajuste en móvil */
-  .video-container {
-    max-width: 100%;
+.video-container {
+    max-width: 100%; /* Para móviles el video ocupe ancho completo */
     padding-bottom: 56.25%;
+    margin-left: 0;
   }
 }
-
