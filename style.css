@@ -96,7 +96,7 @@ h3.subheading {
   left: 50%;
   transform: translateX(-50%);
   width: 480px;
-  height: 5px;
+  height: 4px;
   background-color: var(--accent);
   border-radius: 4px;
 }
