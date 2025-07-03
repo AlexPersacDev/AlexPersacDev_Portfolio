@@ -86,12 +86,14 @@ h3.subheading {
 .section-anchor {
   position: relative;
   scroll-margin-top: 100px;
-  padding-bottom: 60px; /* espacio extra para línea decorativa */
+  padding-bottom: 60px; /* espacio para la barra */
+  margin-bottom: 40px; /* espacio entre secciones */
 }
 
 .section-anchor::after {
   content: "";
   position: absolute;
+  bottom: 0; /* para que la barra esté pegada al fondo del contenedor */
   left: 50%;
   transform: translateX(-50%);
   width: 480px;
