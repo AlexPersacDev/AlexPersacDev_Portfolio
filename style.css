@@ -1,6 +1,6 @@
 :root {
-  --background: #1e1e1e !important;
-  --text: #ffffff !important;
+  --background: #1e1e1e;
+  --text: #ffffff;
   --accent: #ffcc00;
 }
 
@@ -32,7 +32,7 @@ header {
   align-items: center;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--accent);
-
+  
   position: sticky;
   top: 0;
   background-color: var(--background);
@@ -42,82 +42,66 @@ header {
 header h1 {
   font-size: 1.8em;
   color: var(--accent);
+  font-weight: 300;
 }
 
 nav a {
   margin-left: 20px;
   text-decoration: none;
   color: var(--text);
+  font-weight: 300;
 }
 
 nav a:hover {
   color: var(--accent);
 }
 
-/* =====================
-   TÍTULOS
-===================== */
+/* TÍTULOS */
 
 h2 {
   font-size: 2.2em;
   color: var(--accent);
   margin-bottom: 20px;
-  font-weight: normal;
-  border: none; /* Quitar línea inferior */
+  font-weight: 300;
 }
 
 h3.subheading {
   font-size: 1.6em;
   color: var(--accent);
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-  font-weight: normal; /* quitar negrita */
-  border: none; /* quitar línea */
+  margin-left: 15px;
+  margin-bottom: 10px;
+  font-weight: 300;
 }
 
-/* =====================
-   PÁRRAFOS Y ESPACIADOS EN PROYECTOS
-===================== */
+/* TEXTOS Y SEPARACIONES */
 
-section p {
-  margin-bottom: 1em;
+section p,
+section ul,
+section .proyecto {
+  margin-top: 12px;
+  margin-bottom: 12px;
   line-height: 1.5;
 }
 
 .proyecto {
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 30px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.proyecto img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin-bottom: 1em;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.proyecto img:hover {
-  transform: scale(1.02);
-}
-
-/* =====================
-   CONTENEDOR DE VIDEO
-===================== */
+/* VIDEO CONTAINER */
 
 .video-container {
   position: relative;
-  width: 100%;
-  max-width: 640px; /* tamaño máximo para video */
-  aspect-ratio: 16 / 9;
-  margin-top: 1.5em;
-  margin-bottom: 2em;
-  border-radius: 12px;
+  max-width: 30%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
   overflow: hidden;
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .video-container iframe {
@@ -126,44 +110,10 @@ section p {
   left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  border: 0;
 }
 
-/* =====================
-   HEADER FIJO Y COMPORTAMIENTO
-===================== */
-
-.sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--background);
-  color: var(--text);
-  z-index: 1000;
-  padding: 20px clamp(5px, 5vw, 40px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  transform: translateY(0);
-  opacity: 1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
-}
-
-.sticky-header.hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-  box-shadow: none;
-}
-
-.sticky-header.show-shadow {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* =====================
-   MEDIA QUERY PARA MÓVILES
-===================== */
+/* RESPONSIVE */
 
 @media (max-width: 600px) {
   header {
@@ -177,6 +127,10 @@ section p {
     margin-right: 15px;
   }
 
+  .intro p {
+    max-width: 100%;
+  }
+
   .proyecto {
     flex-direction: column;
   }
@@ -186,3 +140,4 @@ section p {
     margin-left: 0;
   }
 }
+
