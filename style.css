@@ -51,7 +51,7 @@ h3.subheading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 1rem 10px 1rem; /* padding arriba y abajo igual */
+  padding: 10px 1rem;
   z-index: 1000;
   transition: top 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.7);
@@ -202,20 +202,34 @@ footer {
 
 /* Responsive ajustes mínimos */
 
+/* Header en móvil dividido en dos filas */
 @media (max-width: 600px) {
   .sticky-header {
-    padding: 8px 0.5rem 8px 0.5rem;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 1rem;
+    gap: 8px;
   }
 
   .sticky-header h1 {
+    flex-basis: 100%;
+    text-align: center;
     font-size: 1.4rem;
+    margin: 0;
+  }
+
+  nav {
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 1rem;
   }
 
   nav a {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
+  /* Línea decorativa más responsiva en móvil */
   .section-anchor::after {
-    width: 90vw; /* hacer la línea decorativa más responsiva en móvil */
+    width: 90vw;
   }
 }
