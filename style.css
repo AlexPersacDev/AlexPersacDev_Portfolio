@@ -1,6 +1,6 @@
 :root {
-  --background: #1e1e1e;
-  --text: #ffffff;
+  --background: #1e1e1e !important;
+  --text: #ffffff !important;
   --accent: #ffcc00;
 }
 
@@ -17,46 +17,26 @@ body {
   font-weight: 300;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* evita scroll horizontal */
 }
 
 .wrapper {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px 0;
 }
 
-/* Para que el contenido no quede detrás del header fijo */
-main {
-  padding-top: 100px;
-}
-
-header.sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--background);
-  color: var(--text);
-  z-index: 1000;
-  padding: 20px clamp(5px, 5vw, 40px);
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 20px;
   border-bottom: 1px solid var(--accent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-}
-
-header.sticky-header.hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-  box-shadow: none;
-}
-
-header.sticky-header.show-shadow {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  
+  position: sticky;
+  top: 0;
+  background-color: var(--background);
+  z-index: 1000;
 }
 
 header h1 {
@@ -74,41 +54,50 @@ nav a:hover {
   color: var(--accent);
 }
 
-section {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+/* =====================
+   NUEVOS ESTILOS PARA TÍTULOS
+===================== */
 
-.subheading {
-  margin-top: 10px;
+h2 {
+  font-size: 2.2em;
   color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 6px;
+  margin-bottom: 20px;
 }
 
-.badge {
-  background: var(--accent);
-  color: #000;
-  padding: 3px 8px;
-  border-radius: 12px;
-  font-size: 0.85em;
-  margin-right: 5px;
+h3.subheading {
+  font-size: 1.6em;
+  color: var(--accent);
+  margin-left: 15px; /* desplazamiento a la izquierda */
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
 }
 
-.proyecto img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: transform 0.3s ease;
+/* =====================
+   SEPARACIÓN ENTRE BLOQUES DE TEXTO
+===================== */
+
+section p,
+section ul,
+section .proyecto {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.proyecto img:hover {
-  transform: scale(1.02);
+.proyecto {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
+
+/* =====================
+   VIDEO CONTAINER REDUCIDO AL 30%
+===================== */
 
 .video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+  max-width: 30%;
+  padding-bottom: 56.25%; /* 16:9 ratio */
   height: 0;
   overflow: hidden;
   border-radius: 12px;
@@ -124,16 +113,49 @@ section {
   border: 0;
 }
 
-footer {
-  margin-top: 60px;
-  padding-top: 20px;
-  border-top: 1px solid var(--accent);
-  text-align: center;
-  font-size: 0.9em;
+/* =====================
+   HEADER FIXED Y COMPORTAMIENTO
+===================== */
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--text);
+  z-index: 1000;
+  padding: 20px clamp(5px, 5vw, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0);
+}
+
+.sticky-header.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  box-shadow: none;
+}
+
+.sticky-header.show-shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* =====================
+   OTROS ESTILOS EXISTENTES
+===================== */
+
+.proyecto img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 600px) {
-  header.sticky-header {
+  header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
@@ -143,4 +165,15 @@ footer {
     margin-left: 0;
     margin-right: 15px;
   }
+
+  .intro p {
+    max-width: 100%;
+  }
+
+  /* Para que el video también se ajuste en móvil */
+  .video-container {
+    max-width: 100%;
+    padding-bottom: 56.25%;
+  }
 }
+
