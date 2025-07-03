@@ -32,7 +32,7 @@ header {
   align-items: center;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--accent);
-  
+
   position: sticky;
   top: 0;
   background-color: var(--background);
@@ -54,9 +54,7 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* =====================
-   NUEVOS ESTILOS PARA TÍTULOS
-===================== */
+/* NUEVOS ESTILOS PARA TÍTULOS */
 
 h2 {
   font-size: 2.2em;
@@ -75,9 +73,7 @@ h3.subheading {
   padding-bottom: 4px;
 }
 
-/* =====================
-   SEPARACIÓN ENTRE BLOQUES DE TEXTO
-===================== */
+/* SEPARACIÓN ENTRE BLOQUES DE TEXTO */
 
 section p,
 section ul,
@@ -86,25 +82,30 @@ section .proyecto {
   margin-bottom: 20px;
 }
 
+/* PROYECTO: layout horizontal para evitar espacio gigante */
+
 .proyecto {
   margin-top: 40px;
   margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;  /* Cambio a fila */
   align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* para móviles */
 }
 
-/* =====================
-   VIDEO CONTAINER REDUCIDO AL 30%
-===================== */
+/* VIDEO CONTAINER con posición relativa, padding para aspecto 16:9 */
 
 .video-container {
+  position: relative;
   max-width: 30%;
   padding-bottom: 56.25%; /* 16:9 ratio */
   height: 0;
   overflow: hidden;
   border-radius: 12px;
   margin-top: 20px;
+  margin-left: 0;
+  flex-shrink: 0; /* evitar que el contenedor reduzca su tamaño */
 }
 
 .video-container iframe {
@@ -116,9 +117,7 @@ section .proyecto {
   border: 0;
 }
 
-/* =====================
-   HEADER FIXED Y COMPORTAMIENTO
-===================== */
+/* HEADER FIXED Y COMPORTAMIENTO */
 
 .sticky-header {
   position: fixed;
@@ -148,25 +147,14 @@ section .proyecto {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* =====================
-   OTROS ESTILOS EXISTENTES
-===================== */
+/* OTROS ESTILOS EXISTENTES */
 
 .proyecto img:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
 }
 
-.video-container {
-  position: relative;
-  max-width: 30%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  margin-top: 20px;
-  margin-left: 15px;
-}
+/* MEDIA QUERY para móviles */
 
 @media (max-width: 600px) {
   header {
@@ -183,9 +171,15 @@ section .proyecto {
   .intro p {
     max-width: 100%;
   }
-.video-container {
-    max-width: 100%; /* Para móviles el video ocupe ancho completo */
+
+  .proyecto {
+    flex-direction: column; /* columnas en móvil */
+  }
+
+  .video-container {
+    max-width: 100%; /* videos ancho completo */
     padding-bottom: 56.25%;
     margin-left: 0;
+    margin-top: 15px;
   }
 }
