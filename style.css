@@ -15,8 +15,6 @@ body {
   color: var(--text);
   font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
   font-weight: 300;
-  margin: 0;
-  padding: 0;
 }
 
 .wrapper {
@@ -26,14 +24,13 @@ body {
   padding: 20px 0;
 }
 
+/* HEADER STICKY */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  padding: 20px 30px;
   border-bottom: 1px solid var(--accent);
-    padding-left: 20px;
-  padding-right: 20px;
 
   position: sticky;
   top: 0;
@@ -51,10 +48,12 @@ header h1 {
   font-size: 1.8em;
   color: var(--accent);
   font-weight: 300;
+  margin-left: 10px;
 }
 
 nav a {
   margin-left: 20px;
+  margin-right: 10px;
   text-decoration: none;
   color: var(--text);
   font-weight: 300;
@@ -65,17 +64,11 @@ nav a:hover {
 }
 
 /* TÍTULOS */
-
 h2 {
   font-size: 2.2em;
   color: var(--accent);
   margin-bottom: 20px;
   font-weight: 300;
-}
-
-/* Para evitar que los títulos se queden tapados con el header fijo */
-.section-anchor {
-  scroll-margin-top: 80px; /* ajusta a la altura de tu header + algo de margen */
 }
 
 h3.subheading {
@@ -87,7 +80,6 @@ h3.subheading {
 }
 
 /* TEXTOS Y SEPARACIONES */
-
 section p,
 section ul,
 section .proyecto {
@@ -105,20 +97,19 @@ section .proyecto {
 }
 
 /* VIDEO CONTAINER */
-
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 720px; /* vídeos más grandes */
+  max-width: 720px;
   aspect-ratio: 16 / 9;
-  margin: 30px auto; /* centrado horizontal */
+  margin: 30px auto;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
 }
 
 .video-container iframe {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   border: none;
@@ -126,7 +117,6 @@ section .proyecto {
 }
 
 /* BADGES */
-
 .badge {
   display: inline-block;
   background-color: var(--accent);
@@ -137,24 +127,26 @@ section .proyecto {
   margin-left: 6px;
 }
 
+/* ANCLAJE + BARRA DECORATIVA */
 .section-anchor {
   position: relative;
   scroll-margin-top: 80px;
-  padding-bottom: 20px; /* espacio para la barra */
+  padding-bottom: 40px;
 }
 
 .section-anchor::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px; /* barra corta */
+  width: 60px;
   height: 4px;
   background-color: var(--accent);
   border-radius: 2px;
 }
 
+/* FOOTER */
 footer {
   margin-top: 40px;
   text-align: center;
@@ -163,12 +155,12 @@ footer {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 600px) {
   header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    padding: 10px 20px;
   }
 
   nav a {
@@ -186,6 +178,5 @@ footer {
 
   .video-container {
     max-width: 100%;
-    margin-left: 0;
   }
 }
