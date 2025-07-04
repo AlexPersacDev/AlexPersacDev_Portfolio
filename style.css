@@ -5,6 +5,7 @@
   --header-height: 60px;
 }
 
+/* Tipografías */
 body {
   font-family: 'M PLUS Code Latin', monospace, sans-serif;
   background-color: var(--bg-color);
@@ -13,35 +14,45 @@ body {
   padding: 0;
   line-height: 1.6;
   overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
 
 h1 {
   font-family: 'Tektur', cursive, sans-serif;
+  font-weight: 700;
   font-size: 2rem;
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 3px;
   margin: 0;
+  white-space: nowrap;
 }
 
+/* Títulos principales */
 h2.section-title {
   font-family: 'Tektur', cursive, sans-serif;
   font-weight: 700;
   font-size: 1.8rem;
+  margin: 0 0 1rem 0;
   color: var(--accent);
   text-decoration: underline;
   text-underline-offset: 6px;
   text-decoration-thickness: 3px;
 }
 
+/* Subtítulos */
 h3.subheading {
   font-family: 'Orbitron', sans-serif;
   font-weight: 500;
   font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   color: var(--accent);
 }
 
+/* Sticky header */
 .sticky-header {
   position: sticky;
   top: 0;
@@ -53,53 +64,58 @@ h3.subheading {
   padding: 10px 1rem;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  flex-wrap: nowrap;
+}
+
+.sticky-header.hidden {
+  top: -70px;
 }
 
 nav {
-  margin-left: auto;
   display: flex;
   gap: 1rem;
+  margin-left: auto;
 }
 
 nav a {
   color: var(--accent);
-  font-weight: 600;
   text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Contacto */
 #contacto a {
   color: var(--accent);
   text-decoration: underline;
-  text-shadow: 0 0 3px var(--accent), 0 0 5px var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-shadow: 0 0 4px var(--accent), 0 0 6px var(--accent);
   transition: all 0.3s ease;
 }
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 8px var(--accent), 0 0 15px var(--accent);
+#contacto a:hover {
+  filter: brightness(1.3);
+  text-shadow: 0 0 6px var(--accent), 0 0 12px var(--accent);
 }
 
-.video-container iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
+/* Ajustes */
+p, li {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
 }
 
 .section-anchor {
-  scroll-margin-top: 100px;
-  margin-bottom: 40px;
-  padding-bottom: 60px;
   position: relative;
+  scroll-margin-top: 100px;
+  padding-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .section-anchor::after {
@@ -114,9 +130,72 @@ nav a {
   border-radius: 4px;
 }
 
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.proyecto p {
+  margin-bottom: 0.8rem;
+}
+
+.badge {
+  background: var(--accent);
+  color: var(--bg-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-right: 0.4rem;
+}
+
+/* Video con borde glowing */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px var(--accent);
+  border-radius: 4px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem 0;
   color: var(--accent);
-  font-family: 'M PLUS Code Latin', monospace, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sticky-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 1rem;
+    gap: 8px;
+  }
+
+  .sticky-header h1 {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  nav {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .section-anchor::after {
+    width: 90vw;
+  }
 }
