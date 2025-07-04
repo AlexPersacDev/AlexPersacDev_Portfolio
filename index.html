@@ -1,4 +1,3 @@
-html_content = """
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,39 +16,64 @@ html_content = """
       <a href="#proyectos">Proyectos</a>
       <a href="#contacto">Contacto</a>
     </nav>
-    <button id="toggle-theme" aria-label="Cambiar tema" style="background:none; border:none; color: var(--accent); font-size: 1.4rem; cursor: pointer; margin-left: 1rem;">
-    </button>
+    <button id="toggle-theme" aria-label="Cambiar tema">🌗</button>
   </header>
 
   <div class="wrapper">
     <main>
+      <!-- INICIO -->
       <section id="inicio" class="section-anchor">
         <h2 class="section-title">Programador de videojuegos</h2>
         <p>IA, tools, gameplay, arquitectura limpia. Explora mi trabajo y filosofía.</p>
       </section>
 
+      <!-- SOBRE MÍ -->
       <section id="sobre-mi" class="section-anchor">
         <h2 class="section-title">Sobre mí</h2>
         <h3 class="subheading">¿De dónde salgo?</h3>
         <p>Ilicitano con sangre extremeña y gallega, de familia de artistas y diseñadores, descubrí en el grado superior de desarrollo de entornos interactivos que mi vocación era la programación.</p>
-        <p>La programación de entornos interactivos me permite combinar las que considero mis dos mayores cualidades: mi razonamiento lógico y el ojo artístico que he desarrollado desde pequeño.</p>
+        <p>La programación de entornos interactivos me permite combinar mis dos mayores cualidades: razonamiento lógico y el ojo artístico que he desarrollado desde pequeño.</p>
       </section>
 
+      <!-- PROYECTOS -->
       <section id="proyectos" class="section-anchor">
         <h2 class="section-title">Proyectos</h2>
+
         <div class="proyecto">
           <img src="https://via.placeholder.com/800x200?text=Banner+Temporal" alt="Banner Who's Playing" />
           <h3 class="subheading">Who's Playing (2024)</h3>
-          <p><strong>Descripción:</strong> "Who's playin?" es una IA adaptativa como herramienta para desarrolladores de videojuegos en Unity...</p>
+          <p><strong>Descripción:</strong> "Who's playin?" es una IA adaptativa como herramienta para desarrolladores en Unity que analiza el comportamiento del jugador para ajustar la experiencia en tiempo real.</p>
           <p><strong>Tecnologías:</strong> <span class="badge">Unity</span> <span class="badge">C#</span> <span class="badge">Git</span></p>
-          <p><strong>Mi aportación:</strong> Este proyecto tuvo una primera fase de análisis...</p>
+          <p><strong>Mi aportación:</strong> Implementación de machine learning, pruebas con perfiles de jugador y ajustes dinámicos.</p>
           <div class="video-container">
             <iframe src="https://www.youtube.com/embed/PVcR4r2vj4s" allowfullscreen></iframe>
           </div>
         </div>
-        <!-- Otros proyectos omitidos por brevedad -->
+
+        <div class="proyecto">
+          <img src="https://via.placeholder.com/800x200?text=Banner+Temporal" alt="Banner Procedural Dungeon Generator" />
+          <h3 class="subheading">Procedural Dungeon Generator (2024)</h3>
+          <p><strong>Descripción:</strong> Sistema modular para generar mazmorras con alta variabilidad y coherencia.</p>
+          <p><strong>Tecnologías:</strong> <span class="badge">Unity</span> <span class="badge">C#</span> <span class="badge">Git</span> <span class="badge">Notion</span> <span class="badge">Miró</span></p>
+          <p><strong>Mi aportación:</strong> Diseño arquitectónico del generador y programación de algoritmos de construcción dinámica.</p>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/CxH8vpaD7UQ" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="proyecto">
+          <img src="https://via.placeholder.com/800x200?text=Banner+Temporal" alt="Banner Vivid Veil" />
+          <h3 class="subheading">Vivid Veil (2024–2025)</h3>
+          <p><strong>Descripción:</strong> Videojuego con fuerte carga narrativa visual y enfoque artístico.</p>
+          <p><strong>Tecnologías:</strong> <span class="badge">Unity</span> <span class="badge">C#</span> <span class="badge">Plastic SCM</span> <span class="badge">Notion</span> <span class="badge">Miró</span></p>
+          <p><strong>Mi rol:</strong> Concepto, motor de juego, coordinación con diseñadores y artistas.</p>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/GtRuQqqVLZE" allowfullscreen></iframe>
+          </div>
+        </div>
       </section>
 
+      <!-- CONTACTO -->
       <section id="contacto" class="section-anchor">
         <h2 class="section-title">Contacto</h2>
         <ul>
@@ -59,29 +83,36 @@ html_content = """
         </ul>
       </section>
     </main>
-    <footer><p>&copy; 2025 AlexPersac Dev</p></footer>
+
+    <footer>
+      <p>&copy; 2025 AlexPersac Dev</p>
+    </footer>
   </div>
 
   <script>
     const header = document.querySelector('.sticky-header');
     let lastScroll = 0;
+
     window.addEventListener('scroll', () => {
       const currentScroll = window.pageYOffset;
-      if (currentScroll <= 0) header.classList.remove('hidden');
-      else if (currentScroll > lastScroll) header.classList.add('hidden');
-      else header.classList.remove('hidden');
+      header.classList.toggle('hidden', currentScroll > lastScroll && currentScroll > 0);
       lastScroll = currentScroll;
     });
+
     window.addEventListener('mousemove', (e) => {
       if (e.clientY < 50) header.classList.remove('hidden');
     });
+
     const toggleBtn = document.getElementById('toggle-theme');
     toggleBtn.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
       localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     });
+
     window.addEventListener('load', () => {
-      if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+      if (localStorage.getItem('theme') === 'light') {
+        document.body.classList.add('light-mode');
+      }
     });
   </script>
 </body>
