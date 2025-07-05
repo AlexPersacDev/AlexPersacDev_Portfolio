@@ -175,6 +175,15 @@ footer {
   color: var(--accent);
 }
 
+/*Banners*/
+.project-banner {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .sticky-header {
