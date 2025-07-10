@@ -154,9 +154,8 @@ p, li {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 10px var(--accent);
-  border-radius: 4px;
+  margin: 2rem auto; /* centrado automático */
+  max-width: 40%; /* límite de tamaño */
 }
 
 .video-container iframe {
