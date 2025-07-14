@@ -48,12 +48,13 @@
             <iframe src="https://www.youtube.com/embed/PVcR4r2vj4s" allowfullscreen></iframe>
           </div>
         </div>
-        
-<div class="mini-divider">
-  <div class="bar bar-short"></div>
-  <div class="bar bar-medium"></div>
-  <div class="bar bar-short"></div>
-</div>
+
+        <div class="mini-divider">
+          <div class="bar bar-short"></div>
+          <div class="bar bar-medium"></div>
+          <div class="bar bar-short"></div>
+        </div>
+
         <div class="proyecto">
           <img src="Images/DungeonGeneratorBanner.jpg" alt="Banner Procedural Dungeon Generator" class="project-banner" />
           <h3 class="subheading">Procedural Dungeon Generator (2024)</h3>
@@ -64,13 +65,13 @@
             <iframe src="https://www.youtube.com/embed/CxH8vpaD7UQ" allowfullscreen></iframe>
           </div>
         </div>
-        
-<div class="mini-divider">
-  <div class="bar bar-short"></div>
-  <div class="bar bar-medium"></div>
-  <div class="bar bar-short"></div>
-</div>
-        
+
+        <div class="mini-divider">
+          <div class="bar bar-short"></div>
+          <div class="bar bar-medium"></div>
+          <div class="bar bar-short"></div>
+        </div>
+
         <div class="proyecto">
           <img src="Images/VividVeilBanner.jpg" alt="Banner Vivid Veil" class="project-banner" />
           <h3 class="subheading">Vivid Veil (2024–2025)</h3>
@@ -111,18 +112,6 @@
 
     window.addEventListener('mousemove', (e) => {
       if (e.clientY < 50) header.classList.remove('hidden');
-    });
-
-    const toggleBtn = document.getElementById('toggle-theme');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-    });
-
-    window.addEventListener('load', () => {
-      if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light-mode');
-      }
     });
   </script>
 </body>
