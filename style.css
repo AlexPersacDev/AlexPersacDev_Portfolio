@@ -5,7 +5,6 @@
   --header-height: 60px;
 }
 
-/* Tipografías */
 body {
   font-family: 'M PLUS Code Latin', monospace, sans-serif;
   background-color: var(--bg-color);
@@ -50,7 +49,6 @@ h3.subheading {
   color: var(--accent);
 }
 
-/* Sticky header */
 .sticky-header {
   position: sticky;
   top: 0;
@@ -87,7 +85,6 @@ nav a:hover {
   text-underline-offset: 3px;
 }
 
-/* Contacto */
 #contacto a {
   color: var(--accent);
   text-decoration: underline;
@@ -146,12 +143,12 @@ p, li {
   margin-right: 0.4rem;
 }
 
-/* Video con glowing y tamaño reducido */
+/* Video container con glowing y tamaño controlado */
 .video-container {
   position: relative;
   width: 75%;
   margin: 2rem auto;
-  padding-bottom: 42.1875%; /* 75% de 16:9 */
+  padding-bottom: 42.1875%; /* altura proporcional al 75% */
   height: 0;
 }
 
@@ -166,7 +163,16 @@ p, li {
   border-radius: 8px;
 }
 
-/* Mini separador visual entre proyectos */
+/* Banners */
+.project-banner {
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+/* Mini separador entre proyectos */
 .mini-divider {
   display: flex;
   justify-content: center;
@@ -180,23 +186,7 @@ p, li {
   background-color: var(--accent);
   border-radius: 2px;
   opacity: 0.8;
-}
-
-.bar-short {
-  width: 40px;
-}
-
-.bar-medium {
-  width: 80px;
-}
-
-/* Banners */
-.project-banner {
-  width: 100%;
-  max-height: 360px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border-radius: 8px;
+  width: 60px;
 }
 
 /* Footer */
